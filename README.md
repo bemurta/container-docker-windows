@@ -17,6 +17,7 @@ In this tutorial we are exploring steps related to hosting docker containers fro
 3 - Set and start kafka container [see more info here](https://kafka.apache.org/quickstart) at PowerShell
   
 ```bash
+docker container run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=localhost --env ADVERTISED_PORT=9092 spotify/kafka
 docker run -it --network host --env KAFKA=localhost:9092 --env 
 ```
 3.1 - Create a topic 
