@@ -18,12 +18,11 @@ In this tutorial we are exploring steps related to hosting docker containers fro
   
 ```bash
 docker container run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=localhost --env ADVERTISED_PORT=9092 spotify/kafka
-docker run -it --network host --env KAFKA=localhost:9092 --env 
 ```
-3.1 - Create a topic 
+3.1 - Create a topic (see 3.2.1 and 3.2.2 steps)
 
 ```bash
-kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic topic_name
+./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic topic_name
 ```
 3.2 - Run kafka producer (kafka input)
 3.2.0 - find kafka's container name 
