@@ -24,6 +24,41 @@ docker run -it --network host --env KAFKA=localhost:9092 --env
 ```bash
 kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic topic_name
 ```
+3.2 - Run kafka producer (kafka input)
+3.2.0 - find kafka's container name 
+```bash
+docker ps
+```
+3.2.1 - Acess kafka container 
+```bash
+docker exec -it container_kafka_name bash
+```
+3.2.2 - go to bin folder where the file kafka-console-producer.sh is found (please see that version may vary in next bash command)
+```bash
+cd opt/kafka_2.11-0.10.1.0/bin
+```
+3.2.3 - Acess kafka container 
+```bash
+./kafka-console-producer.sh --broker-list localhost:9092 --topic topic_name 
+```
+
+3.3 - Run kafka consumer (kafka output)
+3.3.0 - find kafka's container name 
+```bash
+docker ps
+```
+3.3.1 - Acess kafka container 
+```bash
+docker exec -it container_kafka_name bash
+```
+3.3.2 - go to bin folder where the file kafka-console-consumer.sh is found (please see that version may vary in next bash command)
+```bash
+cd opt/kafka_2.11-0.10.1.0/bin
+```
+3.2.3 - Acess kafka container 
+```bash
+./kafka-console-producer.sh --broker-list localhost:9092 --topic topic_name 
+```
 
 4 - Set mongodB container (and load with dump (restoring info from another database))
     - Remarks: This command creates a volume pointing to a local disk. Thus, it is required to allow drive sharing at docker settings
