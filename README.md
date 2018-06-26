@@ -37,7 +37,7 @@ docker exec -it container_kafka_name bash
 ```bash
 cd opt/kafka_2.11-0.10.1.0/bin
 ```
-3.2.3 - Acess kafka container 
+3.2.3 - run kafka producer 
 ```bash
 ./kafka-console-producer.sh --broker-list localhost:9092 --topic topic_name 
 ```
@@ -55,9 +55,9 @@ docker exec -it container_kafka_name bash
 ```bash
 cd opt/kafka_2.11-0.10.1.0/bin
 ```
-3.2.3 - Acess kafka container 
+3.2.3 - run kafka consumer 
 ```bash
-./kafka-console-producer.sh --broker-list localhost:9092 --topic topic_name 
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic continuous --from-beginning
 ```
 
 4 - Set mongodB container (and load with dump (restoring info from another database))
