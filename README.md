@@ -93,6 +93,12 @@ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic continuous -
 ```bash
 docker run -it --network host --env KAFKA=localhost:9092 --env MONGO_URI=mongodb://localhost:27017 --env MONGO_DATABASE=databaseName projectName
 ```
+### Troubleshooting
+In case a container dies just after being intiated run the following command to clean unused volumes, images, etc. 
+```bash
+docker system prune
+```
+
 
 To do:
 
